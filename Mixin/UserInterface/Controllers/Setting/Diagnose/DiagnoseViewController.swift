@@ -19,6 +19,9 @@ class DiagnoseViewController: SettingsTableViewController {
         SettingsSection(rows: [
             SettingsRow(title: "Delete Spotlight Index", accessory: .none),
         ]),
+        SettingsSection(rows: [
+            SettingsRow(title: "Diagnose Message Expr.", accessory: .switch(isOn: MessageDiagnoseViewController.isEnabled)),
+        ]),
     ])
     
     override func viewDidLoad() {
@@ -35,6 +38,10 @@ class DiagnoseViewController: SettingsTableViewController {
                                                selector: #selector(rtcLogEnabledDidSwitch(_:)),
                                                name: SettingsRow.accessoryDidChangeNotification,
                                                object: dataSource.sections[1].rows[0])
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(diagnoseMessageExpirationDidSwitch(_:)),
+                                               name: SettingsRow.accessoryDidChangeNotification,
+                                               object: dataSource.sections[5].rows[0])
     }
     
     @objc func rtcLogEnabledDidSwitch(_ notification: Notification) {
@@ -45,6 +52,16 @@ class DiagnoseViewController: SettingsTableViewController {
             return
         }
         CallService.shared.isWebRTCLogEnabled = isOn
+    }
+    
+    @objc func diagnoseMessageExpirationDidSwitch(_ notification: Notification) {
+        guard let row = notification.object as? SettingsRow else {
+            return
+        }
+        guard case let .switch(isOn, _) = row.accessory else {
+            return
+        }
+        MessageDiagnoseViewController.isEnabled = isOn
     }
     
 }
@@ -76,7 +93,7 @@ extension DiagnoseViewController: UITableViewDelegate {
                 showAutoHiddenHud(style: .error, text: "Not Available")
             }
 #if DEBUG
-        case (5, 0):
+        case (6, 0):
             let container = ContainerViewController.instance(viewController: TIPDiagnosticViewController(), title: "TIP")
             navigationController?.pushViewController(container, animated: true)
 #endif

@@ -123,6 +123,13 @@ extension Logger {
         
     }
     
+    public static let dateFormatter: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.timeZone = .current
+        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSZ"
+        return formatter
+    }()
+    
     private enum Level {
         
         case debug
@@ -161,12 +168,6 @@ extension Logger {
     private static let maxFileSize = 2 * bytesPerMegaByte
     private static let preservedTrailingLogSize = 1 * bytesPerMegaByte // Last 1MB of old logs will be preserved when size exceeds maximum
     private static let queue = DispatchQueue(label: "one.mixin.services.log", qos: .utility)
-    private static let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.timeZone = .current
-        formatter.dateFormat = "yyyy-MM-dd HH:mm:ss.SSSZ"
-        return formatter
-    }()
     
     private var fileURL: URL? {
         let filename: String

@@ -10,6 +10,7 @@ enum MessageAction {
     case report
     case pin
     case unpin
+    case diagnose
     
     var image: UIImage? {
         switch self {
@@ -29,6 +30,8 @@ enum MessageAction {
             return R.image.conversation.ic_action_pin()
         case .unpin:
             return R.image.conversation.ic_action_unpin()
+        case .diagnose:
+            return nil
         }
     }
     
@@ -50,7 +53,8 @@ enum MessageAction {
             return R.string.localizable.pin_title()
         case .unpin:
             return R.string.localizable.unpin()
-            
+        case .diagnose:
+            return R.string.localizable.diagnose()
         }
     }
     

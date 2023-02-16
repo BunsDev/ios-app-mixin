@@ -1939,6 +1939,9 @@ extension ConversationViewController {
         if ConversationViewController.allowReportSingleMessage {
             actions.append(.report)
         }
+        if MessageDiagnoseViewController.isEnabled {
+            actions.append(.diagnose)
+        }
         if canPinMessages, status != MessageStatus.SENDING.rawValue, status != MessageStatus.UNKNOWN.rawValue {
             let index: Int?
             if let replyIndex = actions.firstIndex(of: .reply) {
@@ -2004,6 +2007,9 @@ extension ConversationViewController {
         case .unpin:
             dataSource.postponeMessagePinningUpdate(with: message.messageId)
             SendMessageService.shared.sendPinMessages(items: [message], conversationId: conversationId, action: .unpin)
+        case .diagnose:
+            let diagnose = MessageDiagnoseViewController(messageId: message.messageId)
+            present(diagnose, animated: true)
         }
     }
     

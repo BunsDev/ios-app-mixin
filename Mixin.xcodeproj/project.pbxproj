@@ -702,6 +702,8 @@
 		947744DB26A9D2ED00B6BBDD /* ShakableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947744DA26A9D2ED00B6BBDD /* ShakableCell.swift */; };
 		947744DF26A9EBC800B6BBDD /* HomeAppCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947744DE26A9EBC800B6BBDD /* HomeAppCell.swift */; };
 		947744E126A9F2D300B6BBDD /* HomeAppItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947744E026A9F2D300B6BBDD /* HomeAppItem.swift */; };
+		9477E220299E0EED00045094 /* MessageDiagnoseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9477E21F299E0EED00045094 /* MessageDiagnoseViewController.swift */; };
+		9477E222299E0F1A00045094 /* MessageDiagnoseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9477E221299E0F1A00045094 /* MessageDiagnoseView.xib */; };
 		947B36A925DEB72A00146111 /* PlaylistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947B36A825DEB72A00146111 /* PlaylistManager.swift */; };
 		947B36AE25DEB75A00146111 /* PlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 947B36AD25DEB75A00146111 /* PlaylistViewController.swift */; };
 		947B36B325DEB79100146111 /* PlaylistView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 947B36B225DEB79100146111 /* PlaylistView.xib */; };
@@ -1726,6 +1728,8 @@
 		947744DA26A9D2ED00B6BBDD /* ShakableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShakableCell.swift; sourceTree = "<group>"; };
 		947744DE26A9EBC800B6BBDD /* HomeAppCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAppCell.swift; sourceTree = "<group>"; };
 		947744E026A9F2D300B6BBDD /* HomeAppItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeAppItem.swift; sourceTree = "<group>"; };
+		9477E21F299E0EED00045094 /* MessageDiagnoseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDiagnoseViewController.swift; sourceTree = "<group>"; };
+		9477E221299E0F1A00045094 /* MessageDiagnoseView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageDiagnoseView.xib; sourceTree = "<group>"; };
 		947B36A825DEB72A00146111 /* PlaylistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistManager.swift; sourceTree = "<group>"; };
 		947B36AD25DEB75A00146111 /* PlaylistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistViewController.swift; sourceTree = "<group>"; };
 		947B36B225DEB79100146111 /* PlaylistView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlaylistView.xib; sourceTree = "<group>"; };
@@ -2893,6 +2897,8 @@
 				7C14CFBF26CA35CF0094AF4A /* StaticMessagesViewController.swift */,
 				94FCB5FE264673C400CCC8FD /* TranscriptPreviewViewController.swift */,
 				7CB0955226CD18F70049F4C7 /* PinMessagesPreviewViewController.swift */,
+				9477E221299E0F1A00045094 /* MessageDiagnoseView.xib */,
+				9477E21F299E0EED00045094 /* MessageDiagnoseViewController.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -3942,6 +3948,7 @@
 				7C47352B28571D0300ECD293 /* AccessPhoneContactHintWindow.xib in Resources */,
 				7BFE47E32284394000FC4379 /* CheckmarkPeerCell.xib in Resources */,
 				DF846CDF2369551D00AA1197 /* MultisigUserCell.xib in Resources */,
+				9477E222299E0F1A00045094 /* MessageDiagnoseView.xib in Resources */,
 				5E5CA7872674AC8E00C1E113 /* ScreenLockView.xib in Resources */,
 				7C0FAAC927E07A0A008D4021 /* ExpiredMessageTimePickerWindow.xib in Resources */,
 				7BB0F9162434B03300BEDA97 /* SelectedPeerCell.xib in Resources */,
@@ -4840,6 +4847,7 @@
 				7BEE5353222E21D7008D3911 /* KeyboardHeight.swift in Sources */,
 				7B95534322438ECD00CE95E6 /* TopRoundedView.swift in Sources */,
 				7B915F6C215F32A500A562C6 /* GiphyViewController.swift in Sources */,
+				9477E220299E0EED00045094 /* MessageDiagnoseViewController.swift in Sources */,
 				7B9F06C820A985E70095A51B /* VideoMessageCell.swift in Sources */,
 				DF84777820DA5A1200DE5163 /* RecordButton.swift in Sources */,
 				7B86B1F523F6AB0B00C80AD9 /* TitledCardContentWidthCalculable.swift in Sources */,

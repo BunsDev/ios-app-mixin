@@ -10,6 +10,10 @@ public final class ExpiredMessageDAO: UserDatabaseDAO {
 
     public static let shared = ExpiredMessageDAO()
     
+    public func getExpiredMessage(with id: String) -> ExpiredMessage? {
+        db.select(where: ExpiredMessage.column(of: .messageId) == id)
+    }
+    
     public func insert(message: ExpiredMessage, conversationId: String? = nil) {
         db.write { db in
             try insert(message: message, conversationId: conversationId, database: db)
