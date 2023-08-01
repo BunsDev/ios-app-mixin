@@ -113,6 +113,8 @@ extension AssetViewController: TransferActionViewDelegate {
     
     func transferActionView(_ view: TransferActionView, didSelect action: TransferActionView.Action) {
         switch action {
+        case .buy:
+            BuyCryptoViewController.buy(asset: asset, on: self)
         case .send:
             send()
         case .receive:
