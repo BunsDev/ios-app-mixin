@@ -31,14 +31,14 @@
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xwf-UP-GQ3">
                             <rect key="frame" x="20" y="0.0" width="353" height="263"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHU-uf-oTd" customClass="AssetComboBoxView" customModule="Mixin" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHU-uf-oTd" userLabel="Crypto View" customClass="AssetComboBoxView" customModule="Mixin" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="353" height="54"/>
                                     <color key="backgroundColor" name="background"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="54" id="tBu-DO-Sp3"/>
                                     </constraints>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0us-Fz-W6d" customClass="ImageComboBoxView" customModule="Mixin" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0us-Fz-W6d" userLabel="Payment View" customClass="ImageComboBoxView" customModule="Mixin" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="64" width="353" height="54"/>
                                     <color key="backgroundColor" name="background"/>
                                     <constraints>
@@ -48,7 +48,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="irE-27-8bz">
                                     <rect key="frame" x="0.0" y="128" width="353" height="54"/>
                                     <subviews>
-                                        <textField clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQa-9H-m1p" customClass="InsetTextField" customModule="Mixin" customModuleProvider="target">
+                                        <textField clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DQa-9H-m1p" userLabel="Amount Text Field" customClass="InsetTextField" customModule="Mixin" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="207" height="54"/>
                                             <color key="backgroundColor" name="background_input"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCallout"/>
@@ -59,7 +59,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </textField>
-                                        <view contentMode="scaleToFill" horizontalHuggingPriority="750" placeholderIntrinsicWidth="136" placeholderIntrinsicHeight="54" translatesAutoresizingMaskIntoConstraints="NO" id="Rzs-JK-xH9" customClass="ImageComboBoxView" customModule="Mixin" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" horizontalHuggingPriority="750" placeholderIntrinsicWidth="136" placeholderIntrinsicHeight="54" translatesAutoresizingMaskIntoConstraints="NO" id="Rzs-JK-xH9" userLabel="Payment Currency View" customClass="ImageComboBoxView" customModule="Mixin" customModuleProvider="target">
                                             <rect key="frame" x="217" y="0.0" width="136" height="54"/>
                                             <color key="backgroundColor" name="background"/>
                                             <constraints>

@@ -708,6 +708,10 @@
 		94149B432A17B4D5003E9E1A /* NetworkSpeedConditioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94149B422A17B4D5003E9E1A /* NetworkSpeedConditioner.swift */; };
 		94149B482A190889003E9E1A /* DeviceTransferRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94149B472A190889003E9E1A /* DeviceTransferRecord.swift */; };
 		94149B582A1A6A6D003E9E1A /* DeviceTransferClosedReason.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94149B572A1A6A6D003E9E1A /* DeviceTransferClosedReason.swift */; };
+		94159E2D2A7A6B2100484354 /* PaymentSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94159E2B2A7A6B2100484354 /* PaymentSelectorViewController.swift */; };
+		94159E302A7A6B6100484354 /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94159E2F2A7A6B6100484354 /* Payment.swift */; };
+		94159E332A7ABF6300484354 /* PaymentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94159E312A7ABF6300484354 /* PaymentCell.swift */; };
+		94159E342A7ABF6300484354 /* PaymentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94159E322A7ABF6300484354 /* PaymentCell.xib */; };
 		9416231A29BEEFB800E540B9 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = 9416231929BEEFB800E540B9 /* OrderedCollections */; };
 		9416548325CD2D9A007E76D0 /* OggOpusRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9416548225CD2D9A007E76D0 /* OggOpusRecorder.swift */; };
 		9416548B25CD7190007E76D0 /* AudioMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9416548A25CD7190007E76D0 /* AudioMetadata.swift */; };
@@ -746,8 +750,6 @@
 		943A5DA02A5E964E008A9095 /* CheckoutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943A5D9F2A5E964E008A9095 /* CheckoutAPI.swift */; };
 		943A5DA22A5E983B008A9095 /* ImageComboBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943A5DA12A5E983B008A9095 /* ImageComboBoxView.swift */; };
 		943A63E328BDEC27008E0F78 /* TIPPopupInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943A63E228BDEC27008E0F78 /* TIPPopupInputViewController.swift */; };
-		943EA93F2A5E9FB100590C6F /* Frames in Frameworks */ = {isa = PBXBuildFile; productRef = 943EA93E2A5E9FB100590C6F /* Frames */; };
-		943EAA422A5EA1A600590C6F /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 943EAA412A5EA1A600590C6F /* PhoneNumberKit */; };
 		943EACB82A5FA81100590C6F /* IdentityVerificationSubmittedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 943EACB72A5FA81100590C6F /* IdentityVerificationSubmittedViewController.swift */; };
 		94438D57252DAD73005760AF /* Clip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94438D56252DAD73005760AF /* Clip.swift */; };
 		94463C51298D627800E63547 /* AuthenticationFailureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94463C50298D627800E63547 /* AuthenticationFailureView.xib */; };
@@ -1861,6 +1863,10 @@
 		94149B422A17B4D5003E9E1A /* NetworkSpeedConditioner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSpeedConditioner.swift; sourceTree = "<group>"; };
 		94149B472A190889003E9E1A /* DeviceTransferRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTransferRecord.swift; sourceTree = "<group>"; };
 		94149B572A1A6A6D003E9E1A /* DeviceTransferClosedReason.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTransferClosedReason.swift; sourceTree = "<group>"; };
+		94159E2B2A7A6B2100484354 /* PaymentSelectorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSelectorViewController.swift; sourceTree = "<group>"; };
+		94159E2F2A7A6B6100484354 /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
+		94159E312A7ABF6300484354 /* PaymentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentCell.swift; sourceTree = "<group>"; };
+		94159E322A7ABF6300484354 /* PaymentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentCell.xib; sourceTree = "<group>"; };
 		9416548225CD2D9A007E76D0 /* OggOpusRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OggOpusRecorder.swift; sourceTree = "<group>"; };
 		9416548A25CD7190007E76D0 /* AudioMetadata.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioMetadata.swift; sourceTree = "<group>"; };
 		941655C325CD7DA7007E76D0 /* AudioSessionClientPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioSessionClientPriority.swift; sourceTree = "<group>"; };
@@ -2283,11 +2289,9 @@
 				94F5DAA92A554EDB00EB1F5F /* IdensicMobileSDK_VideoIdent in Frameworks */,
 				94DA83762588E595006B0F16 /* WebRTC.xcframework in Frameworks */,
 				273A5E0C1F95EA5100AE802F /* Contacts.framework in Frameworks */,
-				943EA93F2A5E9FB100590C6F /* Frames in Frameworks */,
 				F8E633655B9F4AE705C65155 /* Pods_Mixin.framework in Frameworks */,
 				94341BFA2862F302009C9147 /* libopus.xcframework in Frameworks */,
 				9481C03C2A49A9AA0009DAF8 /* Starscream in Frameworks */,
-				943EAA422A5EA1A600590C6F /* PhoneNumberKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2427,6 +2431,7 @@
 				7C2ACDAD27D73F7C00E9DDB3 /* LeftAlignedCollectionViewFlowLayout.swift */,
 				94647C6F28D243B100684CFA /* TIPNode+Description.swift */,
 				94980FC42A5D51660051AE6D /* BuyLimit.swift */,
+				94159E2F2A7A6B6100484354 /* Payment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -3748,6 +3753,10 @@
 				7BDFAE932559165800296F8B /* CompactAssetCell.xib */,
 				7B0BE45F21A5630500B91A1E /* CompactAssetCell.swift */,
 				DFB19005233220290021CAF3 /* PINLogCell.swift */,
+				94980FC12A5D4FD30051AE6D /* BuyLimitCell.xib */,
+				94980FC02A5D4FD30051AE6D /* BuyLimitCell.swift */,
+				94159E322A7ABF6300484354 /* PaymentCell.xib */,
+				94159E312A7ABF6300484354 /* PaymentCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -3936,14 +3945,13 @@
 				94333CB229960F3900EFF0A8 /* ConnectedDappTableHeaderView.xib */,
 				94333CB42996127500EFF0A8 /* ConnectedDappTableHeaderView.swift */,
 				94333CB6299612F200EFF0A8 /* ConnectedDappViewController.swift */,
-				94980FC12A5D4FD30051AE6D /* BuyLimitCell.xib */,
-				94980FC02A5D4FD30051AE6D /* BuyLimitCell.swift */,
 				94980FBE2A5D4FA00051AE6D /* BuyLimitSelectorViewController.swift */,
 				94980FCC2A5DAB9F0051AE6D /* IdentityVerificationNavigationController.swift */,
 				94980FC82A5D8AE30051AE6D /* IdentityVerificationIntroViewController.swift */,
 				943EACB72A5FA81100590C6F /* IdentityVerificationSubmittedViewController.swift */,
 				94980FD02A5DB9320051AE6D /* BuyCryptoView.xib */,
 				94980FCE2A5DB9250051AE6D /* BuyCryptoViewController.swift */,
+				94159E2B2A7A6B2100484354 /* PaymentSelectorViewController.swift */,
 			);
 			path = Wallet;
 			sourceTree = "<group>";
@@ -4272,8 +4280,6 @@
 				944B1BED2A4CB0AA00C36B61 /* CryptoSwift */,
 				94F5DAA62A554EDB00EB1F5F /* IdensicMobileSDK */,
 				94F5DAA82A554EDB00EB1F5F /* IdensicMobileSDK_VideoIdent */,
-				943EA93E2A5E9FB100590C6F /* Frames */,
-				943EAA412A5EA1A600590C6F /* PhoneNumberKit */,
 			);
 			productName = mixin;
 			productReference = 277FF6FF1F909A1200DBB2EB /* Mixin.app */;
@@ -4391,13 +4397,11 @@
 			mainGroup = 277FF6F61F909A1200DBB2EB;
 			packageReferences = (
 				940C753F299AAE130006338F /* XCRemoteSwiftPackageReference "WalletConnectSwiftV2" */,
-				9431379029AD2F8F00C2484B /* XCRemoteSwiftPackageReference "web3" */,
-				9416231829BEEFB800E540B9 /* XCRemoteSwiftPackageReference "swift-collections" */,
+				9431379029AD2F8F00C2484B /* XCRemoteSwiftPackageReference "web3.swift" */,
+				9416231829BEEFB800E540B9 /* XCRemoteSwiftPackageReference "swift-collections.git" */,
 				9481C03A2A49A9AA0009DAF8 /* XCRemoteSwiftPackageReference "Starscream" */,
-				944B1BEC2A4CB0AA00C36B61 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
-				94F5DAA52A554EDB00EB1F5F /* XCRemoteSwiftPackageReference "IdensicMobileSDK-iOS" */,
-				943EA93D2A5E9FB100590C6F /* XCRemoteSwiftPackageReference "frames-ios" */,
-				943EAA402A5EA1A600590C6F /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
+				944B1BEC2A4CB0AA00C36B61 /* XCRemoteSwiftPackageReference "CryptoSwift.git" */,
+				94F5DAA52A554EDB00EB1F5F /* XCRemoteSwiftPackageReference "IdensicMobileSDK-iOS.git" */,
 			);
 			productRefGroup = 277FF7001F909A1200DBB2EB /* Products */;
 			projectDirPath = "";
@@ -4464,6 +4468,7 @@
 				7B8BB590234F36C000991ACB /* Colors.xcassets in Resources */,
 				947FA4CE299577B700EF13A0 /* AuthorizationsView.xib in Resources */,
 				94B8D18A266E41D300F43CBB /* DatabaseDiagnosticView.xib in Resources */,
+				94159E342A7ABF6300484354 /* PaymentCell.xib in Resources */,
 				7BFCB7762419FC5B00E7BC43 /* LocationCell.xib in Resources */,
 				94980FC32A5D4FD30051AE6D /* BuyLimitCell.xib in Resources */,
 				94333CB329960F3900EFF0A8 /* ConnectedDappTableHeaderView.xib in Resources */,
@@ -4843,6 +4848,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Mixin/Pods-Mixin-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Checkout/Checkout.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseABTesting/FirebaseABTesting.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework",
@@ -4850,9 +4856,12 @@
 				"${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebasePerformance/FirebasePerformance.framework",
 				"${BUILT_PRODUCTS_DIR}/FirebaseRemoteConfig/FirebaseRemoteConfig.framework",
+				"${BUILT_PRODUCTS_DIR}/Frames/Frames.framework",
 				"${BUILT_PRODUCTS_DIR}/GRDB.swift/GRDB.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleDataTransport/GoogleDataTransport.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/JOSESwift/JOSESwift.framework",
+				"${BUILT_PRODUCTS_DIR}/PhoneNumberKit/PhoneNumberKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework",
 				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
@@ -4865,10 +4874,13 @@
 				"${BUILT_PRODUCTS_DIR}/libsignal-protocol-c/libsignal_protocol_c.framework",
 				"${BUILT_PRODUCTS_DIR}/libwebp/libwebp.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/Checkout3DS/Checkout3DS.framework/Checkout3DS",
+				"${PODS_XCFRAMEWORKS_BUILD_DIR}/CheckoutEventLoggerKit/CheckoutEventLoggerKit.framework/CheckoutEventLoggerKit",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Checkout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseABTesting.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseCoreInternal.framework",
@@ -4876,9 +4888,12 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseInstallations.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebasePerformance.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FirebaseRemoteConfig.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Frames.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRDB.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleDataTransport.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JOSESwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PhoneNumberKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBLPromises.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
@@ -4891,6 +4906,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libsignal_protocol_c.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/libwebp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Checkout3DS.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CheckoutEventLoggerKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -4954,6 +4971,7 @@
 				9427D52725E0EB5B00B1EF0E /* PlaylistItem.swift in Sources */,
 				7C1A6C4326C6580600A1D6CE /* StickerPreviewItemCell.swift in Sources */,
 				DFFDCF8420AD8A7A00B4956E /* FileSendViewController.swift in Sources */,
+				94159E2D2A7A6B2100484354 /* PaymentSelectorViewController.swift in Sources */,
 				94D9DF5725F889BC00FC2F28 /* BulletinContentView.swift in Sources */,
 				7B09E55A1FD157EB002E45D3 /* MessageViewModel.swift in Sources */,
 				7BF071C02244E6A1007240AD /* UploadContactCell.swift in Sources */,
@@ -5426,6 +5444,7 @@
 				94659DAA25C13793003403E5 /* DevicePerformance.swift in Sources */,
 				7C0FAAC727E079F1008D4021 /* ExpiredMessageTimePickerWindow.swift in Sources */,
 				DF43304522648B32006D971D /* AssetInfoWindow.swift in Sources */,
+				94159E332A7ABF6300484354 /* PaymentCell.swift in Sources */,
 				7B492F982252159B00C05A45 /* ActivityIndicatorView.swift in Sources */,
 				7C54078D296BD8430082368C /* ChatTextSizeViewController.swift in Sources */,
 				7BC022E7214A150400B7A398 /* AuthorizationTableViewCell.swift in Sources */,
@@ -5553,6 +5572,7 @@
 				DFF2145D209AC7D400612234 /* ConerLabel.swift in Sources */,
 				DFC2647424E9339C00BF954D /* BigAmountConfirmationWindow.swift in Sources */,
 				DF16681E20A6F84200C45E31 /* AllTransactionsViewController.swift in Sources */,
+				94159E302A7A6B6100484354 /* Payment.swift in Sources */,
 				E07E38A123A772CC0005A538 /* CallError.swift in Sources */,
 				E0C7674B23CC8F54003F9215 /* TrailingInfoBackgroundView.swift in Sources */,
 				7B9553412243860C00CE95E6 /* PinValidationPresentationController.swift in Sources */,
@@ -6011,6 +6031,7 @@
 			baseConfigurationReference = 4A0AC6121929BE42B09D0F1E /* Pods-Mixin.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Mixin/Mixin.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -6111,6 +6132,7 @@
 			baseConfigurationReference = 8C43D9D96FCB101481DFD90F /* Pods-Mixin.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Mixin/Mixin.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -6449,7 +6471,7 @@
 				version = 1.6.11;
 			};
 		};
-		9416231829BEEFB800E540B9 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+		9416231829BEEFB800E540B9 /* XCRemoteSwiftPackageReference "swift-collections.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/apple/swift-collections.git";
 			requirement = {
@@ -6457,7 +6479,7 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		9431379029AD2F8F00C2484B /* XCRemoteSwiftPackageReference "web3" */ = {
+		9431379029AD2F8F00C2484B /* XCRemoteSwiftPackageReference "web3.swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/argentlabs/web3.swift";
 			requirement = {
@@ -6465,23 +6487,7 @@
 				version = 1.5.1;
 			};
 		};
-		943EA93D2A5E9FB100590C6F /* XCRemoteSwiftPackageReference "frames-ios" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/checkout/frames-ios";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.0.0;
-			};
-		};
-		943EAA402A5EA1A600590C6F /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.6.0;
-			};
-		};
-		944B1BEC2A4CB0AA00C36B61 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+		944B1BEC2A4CB0AA00C36B61 /* XCRemoteSwiftPackageReference "CryptoSwift.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift.git";
 			requirement = {
@@ -6497,7 +6503,7 @@
 				version = 3.1.2;
 			};
 		};
-		94F5DAA52A554EDB00EB1F5F /* XCRemoteSwiftPackageReference "IdensicMobileSDK-iOS" */ = {
+		94F5DAA52A554EDB00EB1F5F /* XCRemoteSwiftPackageReference "IdensicMobileSDK-iOS.git" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SumSubstance/IdensicMobileSDK-iOS.git";
 			requirement = {
@@ -6515,27 +6521,17 @@
 		};
 		9416231929BEEFB800E540B9 /* OrderedCollections */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9416231829BEEFB800E540B9 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			package = 9416231829BEEFB800E540B9 /* XCRemoteSwiftPackageReference "swift-collections.git" */;
 			productName = OrderedCollections;
 		};
 		9431379129AD2F8F00C2484B /* web3.swift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 9431379029AD2F8F00C2484B /* XCRemoteSwiftPackageReference "web3" */;
+			package = 9431379029AD2F8F00C2484B /* XCRemoteSwiftPackageReference "web3.swift" */;
 			productName = web3.swift;
-		};
-		943EA93E2A5E9FB100590C6F /* Frames */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 943EA93D2A5E9FB100590C6F /* XCRemoteSwiftPackageReference "frames-ios" */;
-			productName = Frames;
-		};
-		943EAA412A5EA1A600590C6F /* PhoneNumberKit */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 943EAA402A5EA1A600590C6F /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
-			productName = PhoneNumberKit;
 		};
 		944B1BED2A4CB0AA00C36B61 /* CryptoSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 944B1BEC2A4CB0AA00C36B61 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			package = 944B1BEC2A4CB0AA00C36B61 /* XCRemoteSwiftPackageReference "CryptoSwift.git" */;
 			productName = CryptoSwift;
 		};
 		9481C03B2A49A9AA0009DAF8 /* Starscream */ = {
@@ -6545,12 +6541,12 @@
 		};
 		94F5DAA62A554EDB00EB1F5F /* IdensicMobileSDK */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 94F5DAA52A554EDB00EB1F5F /* XCRemoteSwiftPackageReference "IdensicMobileSDK-iOS" */;
+			package = 94F5DAA52A554EDB00EB1F5F /* XCRemoteSwiftPackageReference "IdensicMobileSDK-iOS.git" */;
 			productName = IdensicMobileSDK;
 		};
 		94F5DAA82A554EDB00EB1F5F /* IdensicMobileSDK_VideoIdent */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 94F5DAA52A554EDB00EB1F5F /* XCRemoteSwiftPackageReference "IdensicMobileSDK-iOS" */;
+			package = 94F5DAA52A554EDB00EB1F5F /* XCRemoteSwiftPackageReference "IdensicMobileSDK-iOS.git" */;
 			productName = IdensicMobileSDK_VideoIdent;
 		};
 /* End XCSwiftPackageProductDependency section */

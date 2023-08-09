@@ -1,5 +1,7 @@
 import UIKit
+import PassKit
 import Frames
+import Checkout3DS
 import MixinServices
 
 class BuyCryptoViewController: KeyboardBasedLayoutViewController {
@@ -65,7 +67,13 @@ class BuyCryptoViewController: KeyboardBasedLayoutViewController {
         
         paymentView.titleLabel.text = "Visa / Mastercard"
         paymentView.subtitleLabel.text = "Gateway Fee: 1.99%"
-        paymentView.button.addTarget(self, action: #selector(selectPayment(_:)), for: .touchUpInside)
+        if PKPaymentAuthorizationController.canMakePayments(usingNetworks: [.visa, .masterCard]) {
+            paymentView.accessoryImageView.isHidden = false
+            paymentView.button.addTarget(self, action: #selector(selectPayment(_:)), for: .touchUpInside)
+        } else {
+            paymentView.accessoryImageView.isHidden = true
+            paymentView.button.removeTarget(self, action: nil, for: .touchUpInside)
+        }
         
         paymentCurrencyView.accessoryImageView.isHidden = false
         paymentCurrencyView.button.addTarget(self, action: #selector(selectPaymentCurrency(_:)), for: .touchUpInside)
@@ -96,7 +104,11 @@ class BuyCryptoViewController: KeyboardBasedLayoutViewController {
     }
     
     @objc private func selectPayment(_ sender: Any) {
-        
+        let selector = PaymentSelectorViewController(payments: [.applePay, .creditCard], selectedIndex: 0)
+        selector.onSelected = { payment in
+            
+        }
+        present(selector, animated: true)
     }
     
     @objc private func selectPaymentCurrency(_ sender: Any) {
@@ -121,6 +133,29 @@ class BuyCryptoViewController: KeyboardBasedLayoutViewController {
         frames.title = "Pay with Card"
         frames.navigationItem.standardAppearance = HomeNavigationController.navigationBarAppearance()
         navigationController?.pushViewController(frames, animated: true)
+        
+        let request = PKPaymentRequest()
+        request.paymentSummaryItems = [
+            PKPaymentSummaryItem(label: "Exchange", amount: NSDecimalNumber(value: 1), type: .final),
+            PKPaymentSummaryItem(label: "Fee", amount: NSDecimalNumber(value: 0.2), type: .final),
+        ]
+        request.merchantIdentifier = "merchant.one.mixin.messenger.checkout.sandbox"
+        request.merchantCapabilities = .capability3DS
+        request.countryCode = "US"
+        request.currencyCode = "USD"
+        request.supportedNetworks = [.visa, .masterCard]
+        request.shippingType = .servicePickup
+        
+        let authorization = PKPaymentAuthorizationController(paymentRequest: request)
+        authorization.delegate = self
+        authorization.present(completion: { (presented: Bool) in
+            if presented {
+                debugPrint("Presented payment controller")
+            } else {
+                debugPrint("Failed to present payment controller")
+            }
+        })
+        
     }
     
     private func reloadViews(with asset: AssetItem) {
@@ -135,6 +170,45 @@ class BuyCryptoViewController: KeyboardBasedLayoutViewController {
                                           assetID: "965e5c6e-434c-3fa9-b780-c50f43cd955c")
         CheckoutAPI.payment(request: request) { result in
             print(result)
+        }
+    }
+    
+}
+
+extension BuyCryptoViewController: PKPaymentAuthorizationControllerDelegate {
+    
+    func paymentAuthorizationControllerDidFinish(_ controller: PKPaymentAuthorizationController) {
+        controller.dismiss()
+    }
+    
+    func paymentAuthorizationController(
+        _ controller: PKPaymentAuthorizationController,
+        didAuthorizePayment payment: PKPayment,
+        handler completion: @escaping (PKPaymentAuthorizationResult) -> Void
+    ) {
+        let checkout = CheckoutAPIService(publicKey: MixinKeys.frames, environment: .sandbox)
+        let paymentData = payment.token.paymentData
+        checkout.createToken(.applePay(ApplePay(tokenData: paymentData))) { result in
+            switch result {
+            case .success(let details):
+                print(details.token, details.scheme, details.issuerCountry)
+//                let request = CheckoutAPI.Request(token: details.token,
+//                                                  currency: "USD",
+//                                                  userID: myUserId,
+//                                                  amount: 100,
+//                                                  assetID: "965e5c6e-434c-3fa9-b780-c50f43cd955c")
+//                CheckoutAPI.payment(request: request) { result in
+//                    switch result {
+//                    case .success(let traceID):
+//                        print(traceID)
+//                        completion(.init(status: .success, errors: nil))
+//                    case .failure(let error):
+//                        completion(.init(status: .failure, errors: [error]))
+//                    }
+//                }
+            case .failure(let request):
+                completion(.init(status: .failure, errors: [request]))
+            }
         }
     }
     
