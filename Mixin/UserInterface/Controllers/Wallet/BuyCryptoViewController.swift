@@ -125,7 +125,7 @@ class BuyCryptoViewController: KeyboardBasedLayoutViewController {
         let frames = PaymentFormFactory.buildViewController(configuration: config, style: style) { result in
             switch result {
             case .success(let detail):
-                self.placeOrder(with: detail.token)
+                print(detail)
             case .failure(let error):
                 print(error)
             }
@@ -134,28 +134,27 @@ class BuyCryptoViewController: KeyboardBasedLayoutViewController {
         frames.navigationItem.standardAppearance = HomeNavigationController.navigationBarAppearance()
         navigationController?.pushViewController(frames, animated: true)
         
-        let request = PKPaymentRequest()
-        request.paymentSummaryItems = [
-            PKPaymentSummaryItem(label: "Exchange", amount: NSDecimalNumber(value: 1), type: .final),
-            PKPaymentSummaryItem(label: "Fee", amount: NSDecimalNumber(value: 0.2), type: .final),
-        ]
-        request.merchantIdentifier = "merchant.one.mixin.messenger.checkout.sandbox"
-        request.merchantCapabilities = .capability3DS
-        request.countryCode = "US"
-        request.currencyCode = "USD"
-        request.supportedNetworks = [.visa, .masterCard]
-        request.shippingType = .servicePickup
-        
-        let authorization = PKPaymentAuthorizationController(paymentRequest: request)
-        authorization.delegate = self
-        authorization.present(completion: { (presented: Bool) in
-            if presented {
-                debugPrint("Presented payment controller")
-            } else {
-                debugPrint("Failed to present payment controller")
-            }
-        })
-        
+//        let request = PKPaymentRequest()
+//        request.paymentSummaryItems = [
+//            PKPaymentSummaryItem(label: "Exchange", amount: NSDecimalNumber(value: 1), type: .final),
+//            PKPaymentSummaryItem(label: "Fee", amount: NSDecimalNumber(value: 0.2), type: .final),
+//        ]
+//        request.merchantIdentifier = "merchant.one.mixin.messenger.checkout.sandbox"
+//        request.merchantCapabilities = .capability3DS
+//        request.countryCode = "US"
+//        request.currencyCode = "USD"
+//        request.supportedNetworks = [.visa, .masterCard]
+//        request.shippingType = .servicePickup
+//
+//        let authorization = PKPaymentAuthorizationController(paymentRequest: request)
+//        authorization.delegate = self
+//        authorization.present(completion: { (presented: Bool) in
+//            if presented {
+//                debugPrint("Presented payment controller")
+//            } else {
+//                debugPrint("Failed to present payment controller")
+//            }
+//        })
     }
     
     private func reloadViews(with asset: AssetItem) {
